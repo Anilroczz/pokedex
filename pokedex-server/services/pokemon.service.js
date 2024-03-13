@@ -2,7 +2,7 @@ const Pokemon = require("../models/pokemon.model.js");
 
 const getPokemon = async function(filter) {
   try {
-    const pokemon = await Pokemon.find(filter);
+    const pokemon = await Pokemon.find(filter).sort({dex_number: 1});
     return pokemon;
   } catch(err) {
     throw err;
